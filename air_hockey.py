@@ -249,11 +249,11 @@ def gameLoop():
             serveDirection=-1
             resetPuck()
 
-        if sa >= 5 and score1 > score2:
+        if sa >= 2 and score1 > score2:
             size2 = 54
             redpadimg = pg.transform.rotozoom(pg.image.load(f"./ex05/redpad.png"), 0, 1.8 )
             rcenter = 10
-        elif sa <= -5 and score1 < score2:
+        elif sa <= -2 and score1 < score2:
             size1 = 54
             bluepadimg = pg.transform.rotozoom(pg.image.load(f"./ex05/bluepad.png"), 0, 1.8 )
             bcenter = 10
@@ -304,12 +304,12 @@ def gameLoop():
             pygame.draw.rect(screen,light_blue,goal2_2p)
         #pygame.draw.circle(screen,red,)
 
-        if score1 == 10:
+        if score1 == 5:
             draw_text(screen,400,300,"player1 win",100,white)
             pygame.display.update()
             time.sleep(2)
             break
-        if score2 == 10:
+        if score2 == 5:
             draw_text(screen,400,300,"player2 win",100,white)
             pygame.display.update()
             time.sleep(2)
@@ -318,7 +318,7 @@ def gameLoop():
         
 
         #5点追加されたら障害物表示
-        if score1 + score2 >= 5:
+        if score1 + score2 >= 1:
              ###障害物の表示
             pygame.draw.rect(screen,(120,0,0),wall_obj)
             if disc.colliderect(wall_obj):  #障害物の当たり判定
