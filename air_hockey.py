@@ -253,12 +253,11 @@ def gameLoop():
             size2 = 54
             redpadimg = pg.transform.rotozoom(pg.image.load(f"./ex05/redpad.png"), 0, 1.8 )
             rcenter = 10
-
-        if sa <= -5 and score1 < score2:
+        elif sa <= -5 and score1 < score2:
             size1 = 54
             bluepadimg = pg.transform.rotozoom(pg.image.load(f"./ex05/bluepad.png"), 0, 1.8 )
             bcenter = 10
-        if score1 == score2:
+        elif score1 == score2:
             size1 = 20
             size2 = 20
             bluepadimg = pygame.image.load('./ex05/bluepad.png')
